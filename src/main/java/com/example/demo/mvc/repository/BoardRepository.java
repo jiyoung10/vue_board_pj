@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import com.example.demo.mvc.domain.Board;
+import com.example.demo.mvc.parameter.BoardParameter;
 
 /**
  * 게시판 repository
@@ -18,9 +19,9 @@ public interface BoardRepository {
 	
 	Board get(int boardId);
 	
-	void save(Board board);
+	void save(BoardParameter parameter);
 	
-	void update(int boardId, Board board);
+	void update(BoardParameter parameter);
 	
 	void delete(int boardId);
 

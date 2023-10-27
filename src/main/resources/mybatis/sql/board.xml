@@ -26,22 +26,12 @@
 			BOARD_ID = #{boardId}
 	</select>
 	
-	<insert id="save" parameterType="com.example.demo.mvc.domain.Board">
-		INSERT INTO T_BOARD
-		(
-			TITLE, 
-			CONTENTS, 
-			REG_DATE
-		) 
-		VALUES
-		(
-			#{title}, 
-			#{contents}, 
-			NOW()
-		)
+	<insert id="save" parameterType="com.example.demo.mvc.parameter.BoardParameter">
+		INSERT INTO T_BOARD(TITLE, CONTENTS, REG_DATE)
+		VALUES(#{title}, #{contents}, NOW())
 	</insert>
 	
-	<update id="update" parameterType="com.example.demo.mvc.domain.Board">
+	<update id="update" parameterType="com.example.demo.mvc.parameter.BoardParameter">
 		UPDATE T_BOARD 
 		SET
 			TITLE = #{title}, 
